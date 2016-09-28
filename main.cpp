@@ -2,12 +2,15 @@
 #include <QQmlApplicationEngine>
 #include "tree.h"
 
-int main(int argc, char *argv[])
+int main(/*int argc, char *argv[]*/)
 {
-    QApplication app(argc, argv);
+     tree a ('A');
+     tree *b = new tree ('B', &a);
+     return 0;
+//  QApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+//  QQmlApplicationEngine engine;
+//  engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
-    return app.exec();
+//  return app.exec();
 }
