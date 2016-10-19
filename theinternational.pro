@@ -9,3 +9,6 @@ SOURCES += main.cpp \
 
 HEADERS += \
     tree.h
+
+DISTFILES += \
+    My

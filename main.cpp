@@ -4,10 +4,11 @@
 #include <QHBoxLayout>
 #include <QObject>
 #include <QTableView>
+#include <QDir>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    tree model("../db");
+    tree model("My");//("/home/skt/theinternational1/My");//("../My");
     QWidget widget;
      QHBoxLayout layout (&widget);
      QTreeView view;
