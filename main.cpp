@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    tree model("My");//("/home/skt/theinternational1/My");//("../My");
+    tree model("../My");//("/home/skt/theinternational1/My");//("../My");
     QWidget widget;
      QHBoxLayout layout (&widget);
      QTreeView view;
