@@ -32,7 +32,7 @@ class tree : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    tree(QString dbname, QObject *parent = nullptr);
+    tree(QString dbname);
     ~tree();
     virtual int rowCount(const QModelIndex &parent) const;
     virtual int columnCount(const QModelIndex &parent) const;

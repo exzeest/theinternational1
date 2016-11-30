@@ -5,7 +5,7 @@
 #include <QSqlError>
 #include <QPixmap>
 
-tree::tree(QString dbname, QObject *parent)
+tree::tree(QString dbname)
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbname);
@@ -102,9 +102,9 @@ void tree::fetchAll (const QModelIndex &parent)
     data->children.clear();
     QSqlQuery query;
     if (data->type != THEME) {
-        query.prepare ("SELECT * from hierarchy where pid = :id ORDER BY number");
+        query.prepare ("SELECT * from hierarchy where pid = :id ORDER BY typeN");
     } else {
-        query.prepare ("SELECT * from images where pid = :id ORDER BY number");
+        query.prepare ("SELECT * from images where pid = :id ORDER BY id");
     }
     query.bindValue (":id", data->id);
     query.exec();
@@ -117,7 +117,7 @@ void tree::fetchAll (const QModelIndex &parent)
         case ROOT:
         case TERM:
         case COURSE: {
-            auto type = query.value ("type").toInt();
+            auto type = query.value ("Subject").toInt();
             auto name = query.value ("text").toString();
             data->children.append (
                         new DataWrapper{id, (h_type)type,
