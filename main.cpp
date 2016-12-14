@@ -37,19 +37,19 @@ int main(int argc, char *argv[])
        //ui.applyButton->setEnabled(false);
      a.setStyleSheet(styleSheet);
      tree model("../My");//("/home/skt/theinternational1/My");//("../My");
-     Interface interface;
-
-      QHBoxLayout layout (&interface);
+     Interface interface(&model);
+     interface.show();
+      /*QHBoxLayout layout (&interface);
       QTreeView view;
       QTableView lview;
       layout.addWidget(&view);
       layout.addWidget(&lview);
           view.setModel(&model);
-          lview.setModel(&model);
+          lview.setModel(&model);*/
         //  lview.setRootIndex(ip->index(0,0,ip->index(0,0,QModelIndex())));
-      QObject::connect (&view,SIGNAL(clicked(QModelIndex)),&lview,SLOT(setRootIndex(QModelIndex)));
+      //QObject::connect (&view,SIGNAL(clicked(QModelIndex)),&lview,SLOT(setRootIndex(QModelIndex)));
      // QObject::connect (&view,SIGNAL(entered(QModelIndex)),&lview,SLOT(setRootIndex(QModelIndex)));
      // QObject::connect (&view,SIGNAL(activated(QModelIndex)),&lview,SLOT(setRootIndex(QModelIndex)));
-     interface.show();
+
      return a.exec();
 }

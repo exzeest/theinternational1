@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>691</width>
-    <height>409</height>
+    <width>751</width>
+    <height>407</height>
    </rect>
   </property>
   <property name="font">
@@ -201,34 +201,6 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0" rowspan="4">
-     <widget class="QListView" name="listView">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>400</height>
-       </size>
-      </property>
-      <property name="batchSize">
-       <number>100</number>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QPushButton" name="pushButton_6">
       <property name="text">
@@ -284,9 +256,45 @@
       </property>
      </spacer>
     </item>
+    <item row="1" column="0" rowspan="4">
+     <widget class="QTreeView" name="treeView">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>400</height>
+       </size>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionBla">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>bla</string>
+   </property>
+   <property name="toolTip">
+    <string>WTF</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
