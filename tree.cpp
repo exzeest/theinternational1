@@ -186,7 +186,18 @@ int tree::getChildrenCount (h_type type, int pid) const
     return count;
 }
 
+bool tree::insertRows(int row, int count, const QModelIndex &parent)
+{
+    beginInsertRows(parent, row, row + count - 1);
 
+    DataWrapper *data = static_cast<DataWrapper *> (parent.internalPointer());
+    for (int i = 0; i < count; i++) {
+        data->children.insert(row + i, new DataWrapper() );
+    }
+
+    endInsertRows();
+    return true;
+}
 
 bool tree::canFetchMore (const QModelIndex &parent) const
 {

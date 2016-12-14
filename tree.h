@@ -35,6 +35,7 @@ public:
     tree(QString dbname, QObject *parent = nullptr);
     ~tree();
     virtual int rowCount(const QModelIndex &parent) const;
+    virtual bool insertRows(int row, int count, const QModelIndex &parent);
     virtual int columnCount(const QModelIndex &parent) const;
     virtual QModelIndex index(int row, int column, const QModelIndex &parent) const;
     virtual QVariant data(const QModelIndex &index, int role) const;
