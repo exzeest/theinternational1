@@ -1,0 +1,18 @@
+
+
+QPushButton#pushButton_3{
+    color: orange;
+
+    }
+QPushButton#pushButton_4{
+    color: orange;
+
+    }
+QPushButton#pBRight{
+    color: orange;
+
+    }
+QPushButton#pBLeft{
+    color: orange;
+
+    }

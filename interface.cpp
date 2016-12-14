@@ -1,13 +1,16 @@
 #include "interface.h"
 #include "ui_interface.h"
+#include "QtWidgets"
+
 
 Interface::Interface(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Interface)
 {
-    ui->setupUi(this);
-}
 
+    ui->setupUi(this);
+
+}
 Interface::~Interface()
 {
     delete ui;
