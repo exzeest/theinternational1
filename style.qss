@@ -1,18 +1,10 @@
 
 
-QPushButton#pushButton_3{
-    color: orange;
+QPushButton#pBzoomIn{
+    color:#999792;
 
     }
-QPushButton#pushButton_4{
-    color: orange;
-
-    }
-QPushButton#pBRight{
-    color: orange;
-
-    }
-QPushButton#pBLeft{
-    color: orange;
+QPushButton#pBzoomOut{
+    color:#999792;
 
     }
