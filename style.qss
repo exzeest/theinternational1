@@ -1,10 +1,10 @@
 
 
-QPushButton#pBzoomIn{
-    color:#999792;
+//QPushButton#pBzoomIn{
+//    color:#999792;
 
-    }
-QPushButton#pBzoomOut{
-    color:#999792;
+//    }
+//QPushButton#pBzoomOut{
+ //   color:#999792;
 
-    }
+  //  }

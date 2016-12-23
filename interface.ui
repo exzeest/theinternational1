@@ -2,19 +2,40 @@
 <ui version="4.0">
  <class>Interface</class>
  <widget class="QMainWindow" name="Interface">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>636</height>
+    <width>834</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>834</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>834</width>
+    <height>800</height>
+   </size>
   </property>
   <property name="palette">
    <palette>
@@ -82,17 +103,23 @@
   </property>
   <property name="font">
    <font>
-    <pointsize>16</pointsize>
+    <family>Droid Sans</family>
+    <pointsize>10</pointsize>
    </font>
   </property>
   <property name="cursor">
    <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>TheInternationalProject</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../IconsINskt/PenIcon.png</normaloff>../IconsINskt/PenIcon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget::setStyleSheet(coffe);
+
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -171,7 +198,7 @@
      <family>Droid Sans Devanagari</family>
     </font>
    </property>
-   <layout class="QGridLayout" name="gridLayout" columnstretch="8,1,1,16,1">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="15,1,1,40,1,1">
     <property name="rightMargin">
      <number>0</number>
     </property>
@@ -194,14 +221,15 @@
            <enum>Qt::StrongFocus</enum>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(153, 151, 146);</string>
+           <string notr="true">color: rgb(153, 151, 146);
+text-align:left;</string>
           </property>
           <property name="text">
            <string>редактировать              </string>
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../imageProv/детальки/icon list.png</normaloff>../imageProv/детальки/icon list.png</iconset>
+            <normaloff>../IconsINskt/PenIconMy.png</normaloff>../IconsINskt/PenIconMy.png</iconset>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -324,25 +352,46 @@
        <widget class="QGraphicsView" name="graphicsView"/>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,5,5,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="4,2,6,6,2,4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QPushButton" name="pBLeft">
           <property name="font">
            <font>
-            <family>Droid Arabic Kufi</family>
+            <family>Droid Sans</family>
+            <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(153, 151, 146);
+text-align:left;</string>
+          </property>
           <property name="text">
-           <string/>
+           <string>save note</string>
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../imageProv/детальки/icon trash.png</normaloff>../imageProv/детальки/icon trash.png</iconset>
+            <normaloff>../IconsINskt/SaveCom.png</normaloff>../IconsINskt/SaveCom.png</iconset>
           </property>
           <property name="flat">
            <bool>true</bool>
           </property>
          </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item>
          <widget class="QPushButton" name="pBzoomOut">
@@ -357,9 +406,93 @@
           </property>
           <property name="palette">
            <palette>
-            <active/>
-            <inactive/>
-            <disabled/>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
            </palette>
           </property>
           <property name="font">
@@ -381,12 +514,16 @@
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(153, 151, 146);
+</string>
+          </property>
           <property name="text">
-           <string>                     zoom out</string>
+           <string>zoom out</string>
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../imageProv/детальки/-.png</normaloff>../imageProv/детальки/-.png</iconset>
+            <normaloff>../IconsINskt/-.png</normaloff>../IconsINskt/-.png</iconset>
           </property>
           <property name="default">
            <bool>false</bool>
@@ -400,9 +537,93 @@
          <widget class="QPushButton" name="pBzoomIn">
           <property name="palette">
            <palette>
-            <active/>
-            <inactive/>
-            <disabled/>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Text">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>153</red>
+                <green>151</green>
+                <blue>146</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
            </palette>
           </property>
           <property name="font">
@@ -417,12 +638,15 @@
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(153, 151, 146);</string>
+          </property>
           <property name="text">
-           <string>  zoom in                       </string>
+           <string>zoom in</string>
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../imageProv/детальки/+.png</normaloff>../imageProv/детальки/+.png</iconset>
+            <normaloff>../IconsINskt/+.png</normaloff>../IconsINskt/+.png</iconset>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -430,18 +654,47 @@
          </widget>
         </item>
         <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
          <widget class="QPushButton" name="pBRight">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="font">
            <font>
-            <family>Droid Arabic Kufi</family>
+            <family>Droid Sans</family>
+            <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(153, 151, 146);</string>
+          </property>
           <property name="text">
-           <string/>
+           <string>full screan</string>
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../imageProv/детальки/icon trash.png</normaloff>../imageProv/детальки/icon trash.png</iconset>
+            <normaloff>../IconsINskt/FullScr.png</normaloff>../IconsINskt/FullScr.png</iconset>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -457,11 +710,11 @@
         </property>
         <property name="font">
          <font>
-          <family>Droid Serif</family>
-          <pointsize>9</pointsize>
-          <weight>75</weight>
-          <italic>true</italic>
-          <bold>true</bold>
+          <family>Droid Sans</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="readOnly">
@@ -471,8 +724,8 @@
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Serif'; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans'; font-size:12pt; font-weight:200; font-style:normal;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans'; font-weight:200;&quot;&gt;очень остроумный комментарий&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="overwriteMode">
          <bool>true</bool>
@@ -494,7 +747,7 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../imageProv/детальки/LEFTARROW.png</normaloff>../imageProv/детальки/LEFTARROW.png</iconset>
+        <normaloff>../IconsINskt/LEFTARROW.png</normaloff>../IconsINskt/LEFTARROW.png</iconset>
       </property>
       <property name="toolButtonStyle">
        <enum>Qt::ToolButtonIconOnly</enum>
@@ -513,11 +766,11 @@ p, li { white-space: pre-wrap; }
        </sizepolicy>
       </property>
       <property name="text">
-       <string>&gt;</string>
+       <string/>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../imageProv/детальки/RIGHTARROW.png</normaloff>../imageProv/детальки/RIGHTARROW.png</iconset>
+        <normaloff>../IconsINskt/RIGHTARROW.png</normaloff>../IconsINskt/RIGHTARROW.png</iconset>
       </property>
       <property name="autoRaise">
        <bool>true</bool>
@@ -528,8 +781,27 @@ p, li { white-space: pre-wrap; }
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QPushButton" name="pushButton">
+        <property name="font">
+         <font>
+          <family>Droid Sans</family>
+          <pointsize>10</pointsize>
+          <strikeout>false</strikeout>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(153, 151, 146);
+text-align:left;</string>
+        </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>добавить файл</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../IconsINskt/AddFile.png</normaloff>../IconsINskt/AddFile.png</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -616,9 +888,6 @@ p, li { white-space: pre-wrap; }
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QComboBox" name="comboBox"/>
-      </item>
      </layout>
     </item>
     <item row="0" column="1">
@@ -627,6 +896,19 @@ p, li { white-space: pre-wrap; }
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
+    </item>
+    <item row="0" column="5">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>
