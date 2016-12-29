@@ -1,10 +1,29 @@
+QPushButton
+{
+color:rgb(153, 151, 146);
+}
+
+QPushButton:hover
+{
+color: rgb(251, 137, 89);
+border:none;
+}
+
+QToolButton:hover
+{
+border:none;
+}
 
 
-//QPushButton#pBzoomIn{
-//    color:#999792;
+QPushButton#pB_add_file
+{
+text-align:left;
+}
 
-//    }
-//QPushButton#pBzoomOut{
- //   color:#999792;
 
-  //  }
+QToolTip
+{
+color:rgb(153, 151, 146);
+background-color::rgb(153, 151, 146,0);
+border: none;
+}
