@@ -109,7 +109,7 @@ void tree::fetchAll (const QModelIndex &parent)
     query.bindValue (":id", data->id);
     query.exec();
     while (query.next()) {
-        auto id = query.value ("id").toUInt();
+        auto id = static_cast<quint16>(query.value ("id").toInt());
         auto comment = query.value ("comment").toString();
         QStringList tags = query.value ("tags").toStringList();
         auto number = query.value ("number").toInt();
