@@ -5,7 +5,7 @@
 #include <QSqlError>
 #include <QPixmap>
 
-tree::tree(QString dbname)
+tree::tree(QString dbname, QObject *parent)
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbname);
@@ -71,8 +71,12 @@ QVariant tree::data(const QModelIndex &index, int role) const
          if (index.isValid()) {
              const DataWrapper *elem = dataForIndex (index);
                  if (elem->type == IMAGE){
+                     //std::cout<<(elem->data)->path;
+                     QTextStream Qout(stdout);
+                     QString s="../"+(static_cast<IData*>(elem->data)->path);
+                     Qout<<s;
                      QPixmap pix;
-                     pix.load(static_cast<IData*> (elem->data)->path);
+                     pix.load(s);
                      if (role == Qt::DecorationRole){
                          return pix;
                      }
@@ -102,14 +106,14 @@ void tree::fetchAll (const QModelIndex &parent)
     data->children.clear();
     QSqlQuery query;
     if (data->type != THEME) {
-        query.prepare ("SELECT * from hierarchy where pid = :id ORDER BY typeN");
+        query.prepare ("SELECT * from hierarchy where pid = :id ORDER BY number");
     } else {
-        query.prepare ("SELECT * from images where pid = :id ORDER BY id");
+        query.prepare ("SELECT * from images where pid = :id ORDER BY number");
     }
     query.bindValue (":id", data->id);
     query.exec();
     while (query.next()) {
-        auto id = static_cast<quint16>(query.value ("id").toInt());
+        auto id = static_cast<quint16>(query.value ("id").toUInt());
         auto comment = query.value ("comment").toString();
         QStringList tags = query.value ("tags").toStringList();
         auto number = query.value ("number").toInt();
@@ -117,7 +121,7 @@ void tree::fetchAll (const QModelIndex &parent)
         case ROOT:
         case TERM:
         case COURSE: {
-            auto type = query.value ("Subject").toInt();
+            auto type = query.value ("type").toInt();
             auto name = query.value ("text").toString();
             data->children.append (
                         new DataWrapper{id, (h_type)type,
@@ -182,7 +186,18 @@ int tree::getChildrenCount (h_type type, int pid) const
     return count;
 }
 
+bool tree::insertRows(int row, int count, const QModelIndex &parent)
+{
+    beginInsertRows(parent, row, row + count - 1);
 
+    DataWrapper *data = static_cast<DataWrapper *> (parent.internalPointer());
+    for (int i = 0; i < count; i++) {
+        data->children.insert(row + i, new DataWrapper() );
+    }
+
+    endInsertRows();
+    return true;
+}
 
 bool tree::canFetchMore (const QModelIndex &parent) const
 {
