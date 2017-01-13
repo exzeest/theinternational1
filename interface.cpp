@@ -13,6 +13,7 @@ Interface::Interface(tree *model, QWidget *parent) :
     ui->setupUi(this);
     ui->treeView->setModel(model);
 
+
 }
 
 

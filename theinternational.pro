@@ -69,4 +69,31 @@ DISTFILES += \
     IconsINskt/RIGHTARROW.png \
     IconsINskt/SaveCom.png \
     IconsINskt/trash.png \
-    IconsINskt/minus.png
+    IconsINskt/icon desktop.png \
+    IconsINskt/icon document.png \
+    IconsINskt/Icon gear.png \
+    IconsINskt/icon grid.png \
+    IconsINskt/icon list.png \
+    IconsINskt/icon options.png \
+    IconsINskt/icon Pictures.png \
+    IconsINskt/icon recent.png \
+    IconsINskt/icon trash.png \
+    IconsINskt/icon desktop.png \
+    IconsINskt/icon document.png \
+    IconsINskt/Icon gear.png \
+    IconsINskt/icon grid.png \
+    IconsINskt/icon list.png \
+    IconsINskt/icon options.png \
+    IconsINskt/icon Pictures.png \
+    IconsINskt/icon recent.png \
+    IconsINskt/icon trash.png \
+    IconsINskt/-.png \
+    IconsINskt/icon trash.png \
+    IconsINskt/icon recent.png \
+    IconsINskt/icon Pictures.png \
+    IconsINskt/icon options.png \
+    IconsINskt/icon list.png \
+    IconsINskt/icon grid.png \
+    IconsINskt/Icon gear.png \
+    IconsINskt/icon document.png \
+    IconsINskt/icon desktop.png
