@@ -15,11 +15,40 @@ border:none;
 }
 
 
-
-
 QToolTip
 {
 color:rgb(153, 151, 146);
 background-color::rgb(153, 151, 146,0);
 border: none;
 }
+
+
+QPushButton#pB_add_file{
+text-align:left}
+
+
+
+
+
+QTreeView::item:hover {
+border-left:5px solid rgb(251, 137, 89);
+}
+
+
+QTreeView::item:selected {
+color: white;
+border-left:5px solid rgb(251, 137, 89);
+}
+
+
+
+QTreeView::item:selected:active{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 3, stop: 0 #6ea1f1, stop: 1 #567dbc);
+}
+
+QTreeView::item:selected:!active{
+
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 3, stop: 0 #6ea1f1, stop: 1 #567dbc);
+}
+
+
