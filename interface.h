@@ -15,8 +15,8 @@ class Interface : public QMainWindow
 public:
     explicit Interface( tree *model, QWidget *parent = 0);
     ~Interface();
-public slots:
-    void slotCurrentPic(QModelIndex index, tree *model);
+//public slots:
+//    void slotCurrentPic(QModelIndex index, tree *model);
 private:
     Ui::Interface *ui;
 };

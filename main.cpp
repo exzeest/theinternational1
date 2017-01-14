@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
       QString styleSheet = file.readAll();
          qApp->setStyleSheet(styleSheet);
     a.setStyleSheet(styleSheet);
+
     tree model("My");
     Interface interface(&model);
     interface.show();

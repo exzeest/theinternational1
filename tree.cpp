@@ -73,15 +73,15 @@ QVariant tree::data(const QModelIndex &index, int role) const
                  if (elem->type == IMAGE){
                      //std::cout<<(elem->data)->path;
                      QTextStream Qout(stdout);
-                     QString s="../"+(static_cast<IData*>(elem->data)->path);
-                     Qout<<s;
+                     QString s=(static_cast<IData*>(elem->data)->path);
+                     //Qout<<s;
                      QPixmap pix;
                      pix.load(s);
                      if (role == Qt::DecorationRole){
                          return pix;
                      }
                      else {
-                         return pix.size()/2;
+                         return pix.size();
                      }
              }
          }
