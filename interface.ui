@@ -198,7 +198,7 @@
      <family>Droid Sans Devanagari</family>
     </font>
    </property>
-   <layout class="QGridLayout" name="gridLayout" columnstretch="15,1,1,40,1,1">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="15,0,0,0,0,0">
     <property name="sizeConstraint">
      <enum>QLayout::SetDefaultConstraint</enum>
     </property>
@@ -208,8 +208,198 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
+    <item row="0" column="2">
+     <widget class="QToolButton" name="tB_left">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>IconsINskt/LEFTARROW.png</normaloff>IconsINskt/LEFTARROW.png</iconset>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonIconOnly</enum>
+      </property>
+      <property name="autoRaise">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QToolButton" name="tB_right">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>IconsINskt/RIGHTARROW.png</normaloff>IconsINskt/RIGHTARROW.png</iconset>
+      </property>
+      <property name="autoRaise">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="pB_add_file">
+        <property name="font">
+         <font>
+          <family>Droid Sans</family>
+          <pointsize>10</pointsize>
+          <strikeout>false</strikeout>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>добавить файл</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>IconsINskt/AddFile.png</normaloff>IconsINskt/AddFile.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTreeView" name="treeView">
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>212</red>
+              <green>208</green>
+              <blue>200</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>212</red>
+              <green>208</green>
+              <blue>200</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>212</red>
+              <green>208</green>
+              <blue>200</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>212</red>
+              <green>208</green>
+              <blue>200</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="3">
-     <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,10,1,2">
+     <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,1,2">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,0,0,0,10">
         <item>
@@ -222,7 +412,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/PenIconMy.png</normaloff>../IconsINskt/PenIconMy.png</iconset>
+            <normaloff>IconsINskt/PenIconMy.png</normaloff>IconsINskt/PenIconMy.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -239,7 +429,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/cut.png</normaloff>../IconsINskt/cut.png</iconset>
+            <normaloff>IconsINskt/cut.png</normaloff>IconsINskt/cut.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -256,7 +446,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/90grad.png</normaloff>../IconsINskt/90grad.png</iconset>
+            <normaloff>IconsINskt/90grad.png</normaloff>IconsINskt/90grad.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -273,7 +463,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/Chetenka.png</normaloff>../IconsINskt/Chetenka.png</iconset>
+            <normaloff>IconsINskt/Chetenka.png</normaloff>IconsINskt/Chetenka.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -290,7 +480,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/trash.png</normaloff>../IconsINskt/trash.png</iconset>
+            <normaloff>IconsINskt/trash.png</normaloff>IconsINskt/trash.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -426,7 +616,23 @@
        </layout>
       </item>
       <item>
-       <widget class="QGraphicsView" name="graphicsView"/>
+       <widget class="QLabel" name="picLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,4,2,6,0,0,6,2,4,0">
@@ -440,7 +646,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/SaveCom.png</normaloff>../IconsINskt/SaveCom.png</iconset>
+            <normaloff>IconsINskt/SaveCom.png</normaloff>IconsINskt/SaveCom.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -544,7 +750,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/+.png</normaloff>../IconsINskt/+.png</iconset>
+            <normaloff>IconsINskt/+.png</normaloff>IconsINskt/+.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -624,7 +830,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../IconsINskt/FullScr.png</normaloff>../IconsINskt/FullScr.png</iconset>
+            <normaloff>IconsINskt/FullScr.png</normaloff>IconsINskt/FullScr.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -663,220 +869,6 @@ p, li { white-space: pre-wrap; }
        </widget>
       </item>
      </layout>
-    </item>
-    <item row="0" column="2">
-     <widget class="QToolButton" name="tB_left">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../IconsINskt/LEFTARROW.png</normaloff>../IconsINskt/LEFTARROW.png</iconset>
-      </property>
-      <property name="toolButtonStyle">
-       <enum>Qt::ToolButtonIconOnly</enum>
-      </property>
-      <property name="autoRaise">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <widget class="QToolButton" name="tB_right">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../IconsINskt/RIGHTARROW.png</normaloff>../IconsINskt/RIGHTARROW.png</iconset>
-      </property>
-      <property name="autoRaise">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QPushButton" name="pB_add_file">
-        <property name="font">
-         <font>
-          <family>Droid Sans</family>
-          <pointsize>10</pointsize>
-          <strikeout>false</strikeout>
-          <kerning>true</kerning>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>добавить файл</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../IconsINskt/AddFile.png</normaloff>../IconsINskt/AddFile.png</iconset>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTreeView" name="treeView">
-        <property name="palette">
-         <palette>
-          <active>
-           <colorrole role="Base">
-            <brush brushstyle="SolidPattern">
-             <color alpha="0">
-              <red>255</red>
-              <green>255</green>
-              <blue>255</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Window">
-            <brush brushstyle="SolidPattern">
-             <color alpha="0">
-              <red>212</red>
-              <green>208</green>
-              <blue>200</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </active>
-          <inactive>
-           <colorrole role="Base">
-            <brush brushstyle="SolidPattern">
-             <color alpha="0">
-              <red>255</red>
-              <green>255</green>
-              <blue>255</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Window">
-            <brush brushstyle="SolidPattern">
-             <color alpha="0">
-              <red>212</red>
-              <green>208</green>
-              <blue>200</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </inactive>
-          <disabled>
-           <colorrole role="Base">
-            <brush brushstyle="SolidPattern">
-             <color alpha="0">
-              <red>212</red>
-              <green>208</green>
-              <blue>200</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Window">
-            <brush brushstyle="SolidPattern">
-             <color alpha="0">
-              <red>212</red>
-              <green>208</green>
-              <blue>200</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </disabled>
-         </palette>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <property name="lineWidth">
-         <number>0</number>
-        </property>
-        <property name="showDropIndicator" stdset="0">
-         <bool>true</bool>
-        </property>
-        <property name="alternatingRowColors">
-         <bool>false</bool>
-        </property>
-        <property name="rootIsDecorated">
-         <bool>false</bool>
-        </property>
-        <property name="animated">
-         <bool>true</bool>
-        </property>
-        <property name="allColumnsShowFocus">
-         <bool>true</bool>
-        </property>
-        <property name="headerHidden">
-         <bool>true</bool>
-        </property>
-        <attribute name="headerVisible">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="headerCascadingSectionResizes">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="headerHighlightSections">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="headerStretchLastSection">
-         <bool>true</bool>
-        </attribute>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="1">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="5">
-     <spacer name="horizontalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
     </item>
    </layout>
   </widget>
