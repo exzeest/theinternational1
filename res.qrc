@@ -1,5 +1,31 @@
 <RCC>
     <qresource prefix="/">
         <file>style.qss</file>
+        <file>startpic.png</file>
+        <file>IconsINskt/+.png</file>
+        <file>IconsINskt/-.png</file>
+        <file>IconsINskt/90grad.png</file>
+        <file>IconsINskt/AddFile.png</file>
+        <file>IconsINskt/Chetenka.png</file>
+        <file>IconsINskt/cut.png</file>
+        <file>IconsINskt/FullScr.png</file>
+        <file>IconsINskt/gear.png</file>
+        <file>IconsINskt/icon desktop.png</file>
+        <file>IconsINskt/icon document.png</file>
+        <file>IconsINskt/Icon gear.png</file>
+        <file>IconsINskt/icon grid.png</file>
+        <file>IconsINskt/icon list.png</file>
+        <file>IconsINskt/icon options.png</file>
+        <file>IconsINskt/icon Pictures.png</file>
+        <file>IconsINskt/icon recent.png</file>
+        <file>IconsINskt/icon trash.png</file>
+        <file>IconsINskt/Left.png</file>
+        <file>IconsINskt/LEFTARROW.png</file>
+        <file>IconsINskt/PenIcon.png</file>
+        <file>IconsINskt/PenIconMy.png</file>
+        <file>IconsINskt/RIGHTARROW.png</file>
+        <file>IconsINskt/SaveCom.png</file>
+        <file>IconsINskt/trash.png</file>
+        <file>My</file>
     </qresource>
 </RCC>

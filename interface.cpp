@@ -6,7 +6,7 @@
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QObject>
-#include <QTableView>
+
 
 
 Interface::Interface(tree *model, QWidget *parent) :
@@ -18,39 +18,25 @@ Interface::Interface(tree *model, QWidget *parent) :
 
 
     // Устанавливаем заглушку.
+
+    QPixmap pix = QPixmap(":/startpic.png");
     QGraphicsScene * scen = new QGraphicsScene();
+    scen->addPixmap(pix.scaled(400,400));
     ui->graphicsView->setScene(scen);
-    QGraphicsPixmapItem * pixmap_item = new QGraphicsPixmapItem();
-    scen->addItem(pixmap_item);
-    pixmap_item->setVisible(true);
-    QPixmap pix = QPixmap("GitTheInternational/startpic.png");
-    pixmap_item->setPixmap(pix);
-    scen->setSceneRect(0, 0, pix.width(), pix.height());
-    ui->graphicsView->fitInView(pixmap_item, Qt::KeepAspectRatio);
 
 
 
     QObject::connect (ui->treeView,SIGNAL(clicked(QModelIndex)),this,SLOT(slotCurrentPic(QModelIndex)));
     QObject::connect (ui->treeView,SIGNAL(activated(QModelIndex)),this,SLOT(slotCurrentPic(QModelIndex)));
 
-    //lview.setRootIndex(ip->index(0,0,ip->index(0,0,QModelIndex())));
-    //QObject::connect (ui->treeView,SIGNAL(clicked(QModelIndex)),ui->treeView,SLOT(setRootIndex(QModelIndex)));
 
     QObject::connect (ui->treeView,SIGNAL(clicked(QModelIndex)),this,SLOT(setTextLabel(QModelIndex)));
     QObject::connect (ui->treeView,SIGNAL(activated(QModelIndex)),this,SLOT(setTextLabel(QModelIndex)));
-    //QTextStream Qout(stdout);
-   // ui->treeView->currentIndex().row();
-   // ui->labelAdress->setText(static_cast<QString>(ui->treeView->currentIndex().row()));
-   // QObject::connect (ui->treeView, SIGNAL(clicked(QModelIndex)), ui->labelAdress, SLOT(setTextLabel()));
-   // Qout<<ui->treeView->currentIndex().row();
-    //QObject::connect (ui->treeView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
-                      //this, SLOT(slotCurrentPic(QModelIndex, model)));
 
-    //QObject::connect(ui->tB_left, SIGNAL (clicked()), ui->treeView, SLOT ());
 
 
     // Подрубаем кнопки
-    QObject::connect (ui->tB_full_screen, SIGNAL(triggered(QAction*)), ui->graphicsView, SLOT(updateSceneRect(QRectF));
+    QObject::connect (ui->tB_full_screen, SIGNAL(triggered(QAction*)), ui->graphicsView, SLOT(showFullScreen()));
 
 }
 void Interface::setTextLabel(QModelIndex index)
@@ -84,7 +70,7 @@ void Interface::slotCurrentPic(QModelIndex index)
     }
     else
     {
-        QPixmap pix = QPixmap("GitTheInternational/startpic.png");
+        QPixmap pix = QPixmap(":/startpic.png");
         pixmap_item->setPixmap(pix);
         scen->setSceneRect(0, 0, pix.width(), pix.height());
         ui->graphicsView->fitInView(pixmap_item, Qt::KeepAspectRatio);
@@ -96,3 +82,8 @@ Interface::~Interface()
     delete ui;
 }
 
+
+void Interface::on_tB_left_clicked()
+{
+
+}
