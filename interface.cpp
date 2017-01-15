@@ -36,7 +36,7 @@ Interface::Interface(tree *model, QWidget *parent) :
 
 
     // Подрубаем кнопки
-    QObject::connect (ui->tB_full_screen, SIGNAL(triggered(QAction*)), ui->graphicsView, SLOT(showFullScreen()));
+    QObject::connect (ui->tB_right, SIGNAL(clicked(bool)), ui->treeView, SLOT(currentChanged(QModelIndex,QModelIndex));
 
 }
 void Interface::setTextLabel(QModelIndex index)
@@ -83,7 +83,14 @@ Interface::~Interface()
 }
 
 
-void Interface::on_tB_left_clicked()
-{
+Interface::keyPressEvent(QModelIndex *index, QKeyEvent* event){
 
+    QModelIndex qmi = index;
+
+    if(event->key() == Qt::Key_Down){
+        this->setCurrentIndex(QAbstractItemModel::createIndex(qmi->row()+1, qmi->column()));
+    }else{
+        ...
+    }
+    QTreeView::keyPressEvent(event);
 }
