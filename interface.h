@@ -6,17 +6,17 @@
 
 namespace Ui {
 class Interface;
+
 }
 
 class Interface : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit Interface( tree *model, QWidget *parent = 0);
     ~Interface();
-//public slots:
-//    void slotCurrentPic(QModelIndex index, tree *model);
+public slots:
+    virtual    void slotCurrentPic(QModelIndex index);
 private:
     Ui::Interface *ui;
 };
