@@ -82,27 +82,28 @@ void Interface::setPicToGView(QPixmap outPixmap)
 
 void Interface::nextImage()
 {
-    QModelIndex m2=ui->treeView->indexBelow(ui->treeView->currentIndex());
-    //emit signalChangeCurrentIndex(m2);
+    QModelIndex nextIndex=ui->treeView->indexBelow(ui->treeView->currentIndex());
     QPixmap outPixmap = QPixmap();
-    outPixmap.load(m2.data().toString());
+    outPixmap.load(nextIndex.data().toString());
     if (!outPixmap.isNull())
     {
-        ui->treeView->selectionModel()->setCurrentIndex(m2, QItemSelectionModel::SelectCurrent );
-        slotCurrentPic(m2);
+        ui->treeView->selectionModel()->setCurrentIndex(nextIndex, QItemSelectionModel::SelectCurrent );
+        setPicToGView(outPixmap);
+        setTextLabel(nextIndex);
     }
 }
 
 void Interface::prevImage()
 {
-    QModelIndex m2=ui->treeView->indexAbove(ui->treeView->currentIndex());
-    //emit signalChangeCurrentIndex(m2);
+    QModelIndex prevIndex=ui->treeView->indexAbove(ui->treeView->currentIndex());
+
     QPixmap outPixmap = QPixmap();
-    outPixmap.load(m2.data().toString());
+    outPixmap.load(prevIndex.data().toString());
     if (!outPixmap.isNull())
     {
-        ui->treeView->selectionModel()->setCurrentIndex(m2, QItemSelectionModel::SelectCurrent );
-        slotCurrentPic(m2);
+        ui->treeView->selectionModel()->setCurrentIndex(prevIndex, QItemSelectionModel::SelectCurrent );
+        setPicToGView(outPixmap);
+        setTextLabel(prevIndex);
     }
 }
 

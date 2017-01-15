@@ -45,6 +45,7 @@ public:
         fetchAll (parent);
     }
     bool canFetchMore(const QModelIndex &parent) const;
+
 private:
     DataWrapper d {0, ROOT, nullptr, 0, nullptr, {}, -1};
     void fetchAll(const QModelIndex &parent);
