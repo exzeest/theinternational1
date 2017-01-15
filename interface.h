@@ -18,7 +18,6 @@ public:
 private slots:
     virtual void slotCurrentPic(QModelIndex index);
     virtual void setTextLabel(QModelIndex index);
-    void on_tB_left_clicked();
 
 private:
     Ui::Interface *ui;
