@@ -41,7 +41,6 @@ border-left:5px solid rgb(251, 137, 89);
 }
 
 
-
 QTreeView::item:selected:active{
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 3, stop: 0 #6ea1f1, stop: 1 #567dbc);
 }
@@ -51,4 +50,11 @@ QTreeView::item:selected:!active{
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 3, stop: 0 #6ea1f1, stop: 1 #567dbc);
 }
 
+QTextBrowser{
+border: 1px solid transparent;
+}
+
+QGraphicsView{
+border: 1px solid transparent;
+}
 
