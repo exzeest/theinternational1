@@ -18,8 +18,12 @@ public:
 private slots:
     virtual void slotCurrentPic(QModelIndex index);
     virtual void setTextLabel(QModelIndex index);
+    void nextImage();
+    void prevImage();
 
 private:
+    void setPicToGView(QPixmap outPixmap);
+
     Ui::Interface *ui;
 };
 

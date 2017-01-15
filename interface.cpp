@@ -35,7 +35,8 @@ Interface::Interface(tree *model, QWidget *parent) :
 
 
     // Подрубаем кнопки
-
+    QObject::connect (ui->tB_right,SIGNAL(clicked()),this,SLOT(nextImage()));
+    QObject::connect (ui->tB_left,SIGNAL(clicked()),this,SLOT(prevImage()));
 
 }
 void Interface::setTextLabel(QModelIndex index)
@@ -50,31 +51,61 @@ void Interface::setTextLabel(QModelIndex index)
 
 void Interface::slotCurrentPic(QModelIndex index)
 {
-    QGraphicsScene * scen = new QGraphicsScene();
-    ui->graphicsView->setScene(scen);
-    QGraphicsPixmapItem * pixmap_item = new QGraphicsPixmapItem();
-    scen->addItem(pixmap_item);
-    pixmap_item->setVisible(true);
+
     QString path = index.data().toString();
     QPixmap outPixmap = QPixmap();
     outPixmap.load(path);
     if (!outPixmap.isNull())
     {
-        // Устанавливаем изображение в picLabel
-
-        pixmap_item->setPixmap(outPixmap);
-        scen->setSceneRect(0, 0, outPixmap.width(), outPixmap.height());
-        ui->graphicsView->fitInView(pixmap_item, Qt::KeepAspectRatio);
-
+        setPicToGView(outPixmap);
     }
     else
     {
         QPixmap pix = QPixmap(":/startpic.png");
-        pixmap_item->setPixmap(pix);
-        scen->setSceneRect(0, 0, pix.width(), pix.height());
-        ui->graphicsView->fitInView(pixmap_item, Qt::KeepAspectRatio);
+        setPicToGView(pix);
+
     }
 }
+
+void Interface::setPicToGView(QPixmap outPixmap)
+{
+    QGraphicsScene * scen = new QGraphicsScene();
+    ui->graphicsView->setScene(scen);
+    QGraphicsPixmapItem * pixmap_item = new QGraphicsPixmapItem();
+    scen->addItem(pixmap_item);
+    pixmap_item->setVisible(true);
+    pixmap_item->setPixmap(outPixmap);
+    scen->setSceneRect(0, 0, outPixmap.width(), outPixmap.height());
+    ui->graphicsView->fitInView(pixmap_item, Qt::KeepAspectRatio);
+
+}
+
+void Interface::nextImage()
+{
+    QModelIndex m2=ui->treeView->indexBelow(ui->treeView->currentIndex());
+    //emit signalChangeCurrentIndex(m2);
+    QPixmap outPixmap = QPixmap();
+    outPixmap.load(m2.data().toString());
+    if (!outPixmap.isNull())
+    {
+        ui->treeView->selectionModel()->setCurrentIndex(m2, QItemSelectionModel::SelectCurrent );
+        slotCurrentPic(m2);
+    }
+}
+
+void Interface::prevImage()
+{
+    QModelIndex m2=ui->treeView->indexAbove(ui->treeView->currentIndex());
+    //emit signalChangeCurrentIndex(m2);
+    QPixmap outPixmap = QPixmap();
+    outPixmap.load(m2.data().toString());
+    if (!outPixmap.isNull())
+    {
+        ui->treeView->selectionModel()->setCurrentIndex(m2, QItemSelectionModel::SelectCurrent );
+        slotCurrentPic(m2);
+    }
+}
+
 
 Interface::~Interface()
 {
