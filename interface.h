@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <tree.h>
-
+#include "QtWidgets"
 namespace Ui {
 class Interface;
 }
@@ -15,8 +15,9 @@ class Interface : public QMainWindow
 public:
     explicit Interface( tree *model, QWidget *parent = 0);
     ~Interface();
-//public slots:
-//    void slotCurrentPic(QModelIndex index, tree *model);
+public slots:
+    virtual void slotCurrentPic(QModelIndex index);
+    virtual void setTextLabel(QModelIndex index);
 private:
     Ui::Interface *ui;
 };

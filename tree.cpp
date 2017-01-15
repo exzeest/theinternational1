@@ -72,17 +72,18 @@ QVariant tree::data(const QModelIndex &index, int role) const
              const DataWrapper *elem = dataForIndex (index);
                  if (elem->type == IMAGE){
                      //std::cout<<(elem->data)->path;
-                     QTextStream Qout(stdout);
-                     QString s=(static_cast<IData*>(elem->data)->path);
-                     //Qout<<s;
+                     //QTextStream Qout(stdout);
+                     QString s="../"+(static_cast<IData*>(elem->data)->path);
                      QPixmap pix;
                      pix.load(s);
                      if (role == Qt::DecorationRole){
-                         return pix;
-                     }
-                     else {
-                         return pix.size();
-                     }
+                          return pix;
+                      }
+                      else {
+                          return pix.size();
+                      }
+
+
              }
          }
      }

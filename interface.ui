@@ -198,7 +198,7 @@
      <family>Droid Sans Devanagari</family>
     </font>
    </property>
-   <layout class="QGridLayout" name="gridLayout" rowstretch="0" columnstretch="3,0,0,0,0">
+   <layout class="QGridLayout" name="gridLayout" rowstretch="0" columnstretch="7,1,1,20,1">
     <property name="sizeConstraint">
      <enum>QLayout::SetDefaultConstraint</enum>
     </property>
@@ -208,29 +208,6 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item row="0" column="2">
-     <widget class="QToolButton" name="tB_left">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>IconsINskt/LEFTARROW.png</normaloff>IconsINskt/LEFTARROW.png</iconset>
-      </property>
-      <property name="toolButtonStyle">
-       <enum>Qt::ToolButtonIconOnly</enum>
-      </property>
-      <property name="autoRaise">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -277,7 +254,7 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
+          <width>16777215</width>
           <height>16777215</height>
          </size>
         </property>
@@ -407,8 +384,8 @@
      </layout>
     </item>
     <item row="0" column="3">
-     <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,1,2">
-      <item>
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,12,1,2">
+      <item row="0" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,0,0,0,10">
         <item>
          <widget class="QToolButton" name="tB_redact">
@@ -614,7 +591,7 @@
            <string notr="true">color: rgb(153, 151, 146);</string>
           </property>
           <property name="text">
-           <string>C:/моя папулька/кортиночки/матан/123</string>
+           <string>Current path ot image will be shown here</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -623,89 +600,47 @@
         </item>
        </layout>
       </item>
-      <item>
-       <widget class="QTableView" name="tableView">
+      <item row="1" column="0">
+       <widget class="QGraphicsView" name="graphicsView">
         <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>300</height>
+         </size>
+        </property>
+        <property name="baseSize">
          <size>
           <width>400</width>
           <height>400</height>
          </size>
         </property>
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+        <property name="mouseTracking">
+         <bool>false</bool>
         </property>
         <property name="contextMenuPolicy">
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
+         <enum>Qt::DefaultContextMenu</enum>
         </property>
         <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAsNeeded</enum>
+         <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
         <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAsNeeded</enum>
+         <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
-        <property name="sizeAdjustPolicy">
-         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        <property name="dragMode">
+         <enum>QGraphicsView::ScrollHandDrag</enum>
         </property>
-        <property name="autoScroll">
-         <bool>false</bool>
+        <property name="transformationAnchor">
+         <enum>QGraphicsView::AnchorUnderMouse</enum>
         </property>
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
+        <property name="resizeAnchor">
+         <enum>QGraphicsView::AnchorUnderMouse</enum>
         </property>
-        <property name="showDropIndicator" stdset="0">
-         <bool>false</bool>
+        <property name="rubberBandSelectionMode">
+         <enum>Qt::ContainsItemShape</enum>
         </property>
-        <property name="dragDropOverwriteMode">
-         <bool>false</bool>
-        </property>
-        <property name="selectionMode">
-         <enum>QAbstractItemView::SingleSelection</enum>
-        </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
-        <property name="textElideMode">
-         <enum>Qt::ElideRight</enum>
-        </property>
-        <property name="verticalScrollMode">
-         <enum>QAbstractItemView::ScrollPerPixel</enum>
-        </property>
-        <property name="horizontalScrollMode">
-         <enum>QAbstractItemView::ScrollPerPixel</enum>
-        </property>
-        <property name="showGrid">
-         <bool>false</bool>
-        </property>
-        <attribute name="horizontalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="horizontalHeaderCascadingSectionResizes">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="horizontalHeaderHighlightSections">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="horizontalHeaderStretchLastSection">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="verticalHeaderCascadingSectionResizes">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="verticalHeaderHighlightSections">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="verticalHeaderStretchLastSection">
-         <bool>true</bool>
-        </attribute>
        </widget>
       </item>
-      <item>
+      <item row="2" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,4,2,6,0,0,6,2,4,0">
         <property name="spacing">
          <number>0</number>
@@ -910,7 +845,7 @@
         </item>
        </layout>
       </item>
-      <item>
+      <item row="3" column="0">
        <widget class="QTextBrowser" name="textBrowser">
         <property name="enabled">
          <bool>true</bool>
@@ -941,6 +876,36 @@ p, li { white-space: pre-wrap; }
       </item>
      </layout>
     </item>
+    <item row="0" column="1">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QToolButton" name="tB_left">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>IconsINskt/LEFTARROW.png</normaloff>IconsINskt/LEFTARROW.png</iconset>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonIconOnly</enum>
+      </property>
+      <property name="autoRaise">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="4">
      <widget class="QToolButton" name="tB_right">
       <property name="sizePolicy">
@@ -958,13 +923,6 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="autoRaise">
        <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </item>
