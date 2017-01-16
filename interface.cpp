@@ -42,7 +42,9 @@ Interface::Interface(tree *model, QWidget *parent) :
     QObject::connect (ui->pB_zoom_in, SIGNAL(clicked()),this,SLOT(ZoomIn()));
     QObject::connect (ui->pB_zoom_out, SIGNAL(clicked()),this,SLOT(ZoomOut()));
     QObject::connect (ui->tB_rotate, SIGNAL(clicked()),this,SLOT(RotateImage()));
+    QObject::connect (ui->tB_full_screen,SIGNAL(clicked()),this,SLOT(FullScreen()));
 }
+
 void Interface::SetTextLabel(QModelIndex index)
 {
     if (!index.data().isNull())
@@ -150,6 +152,36 @@ void Interface::RotateImage()
     }
 }
 
+
+QGraphicsView * gv;
+void Interface::FullScreen()
+{
+    QPixmap outPixmap = QPixmap();
+    outPixmap.load(ui->treeView->currentIndex().data().toString());
+    gv=new QGraphicsView();//утечка???
+    //gv->setGeometry(QApplication::desktop()->QDesktopWidget::screenGeometry(0));//QDesktopWidget::screenGeometry(0));
+    gv->setGeometry(0,0,800,500);
+    QGraphicsScene *scen= new QGraphicsScene();
+    scen->setBackgroundBrush(Qt::black);
+    gv->setScene(scen);
+    gv->setFrameStyle(QFrame::NoFrame);
+    gv->setWindowFlags(Qt::CustomizeWindowHint|Qt::WindowStaysOnTopHint|Qt::WindowStaysOnTopHint|Qt::ToolTip);
+    //QObject::connect (gv,SIGNAL(clicked()),this,SLOT(HideFullScreen()));
+    QGraphicsPixmapItem * pixmap_item = new QGraphicsPixmapItem();
+    scen->addItem(pixmap_item);
+    pixmap_item->setVisible(true);
+    pixmap_item->setPixmap(outPixmap);
+    scen->setSceneRect(0, 0, outPixmap.width(), outPixmap.height());
+    gv->fitInView(pixmap_item, Qt::KeepAspectRatio);
+    gv->show();
+
+}
+
+
+    void Interface::HideFullScreen()
+    {
+        gv->hide();
+    }
 
 Interface::~Interface()
 {

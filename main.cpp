@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
          qApp->setStyleSheet(styleSheet);
     a.setStyleSheet(styleSheet);
 
-    tree model("My");
+    tree model("../My");
     Interface interface(&model);
     interface.show();
 
