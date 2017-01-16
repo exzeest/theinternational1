@@ -422,7 +422,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QToolButton" name="tB_turn">
+         <widget class="QToolButton" name="tB_rotate">
           <property name="toolTip">
            <string>повернуть изображение на 90* по часовой стрелке</string>
           </property>
@@ -817,6 +817,9 @@
         <property name="styleSheet">
          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
         </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
         <property name="verticalScrollBarPolicy">
          <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
@@ -824,7 +827,7 @@
          <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
         <property name="sizeAdjustPolicy">
-         <enum>QAbstractScrollArea::AdjustToContents</enum>
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
         </property>
         <property name="renderHints">
          <set>QPainter::Antialiasing|QPainter::HighQualityAntialiasing|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing</set>
@@ -840,6 +843,9 @@
         </property>
         <property name="resizeAnchor">
          <enum>QGraphicsView::AnchorViewCenter</enum>
+        </property>
+        <property name="viewportUpdateMode">
+         <enum>QGraphicsView::FullViewportUpdate</enum>
         </property>
         <property name="rubberBandSelectionMode">
          <enum>Qt::ContainsItemShape</enum>

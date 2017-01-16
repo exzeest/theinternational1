@@ -22,6 +22,7 @@ private slots:
     void PrevImage();
     void ZoomIn();
     void ZoomOut();
+    void RotateImage();
 private:
     void SetPicToGView(QPixmap outPixmap);
     Ui::Interface *ui;

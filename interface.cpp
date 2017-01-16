@@ -41,6 +41,7 @@ Interface::Interface(tree *model, QWidget *parent) :
     QObject::connect (ui->tB_zoom_out, SIGNAL(clicked()),this,SLOT(ZoomOut()));
     QObject::connect (ui->pB_zoom_in, SIGNAL(clicked()),this,SLOT(ZoomIn()));
     QObject::connect (ui->pB_zoom_out, SIGNAL(clicked()),this,SLOT(ZoomOut()));
+    QObject::connect (ui->tB_rotate, SIGNAL(clicked()),this,SLOT(RotateImage()));
 }
 void Interface::SetTextLabel(QModelIndex index)
 {
@@ -72,6 +73,7 @@ void Interface::SlotCurrentPic(QModelIndex index)
 
 void Interface::SetPicToGView(QPixmap outPixmap)
 {
+    ui->graphicsView->resetTransform();
     QGraphicsScene * scen = new QGraphicsScene();
     ui->graphicsView->setScene(scen);
     QGraphicsPixmapItem * pixmap_item = new QGraphicsPixmapItem();
@@ -134,8 +136,20 @@ void Interface::ZoomOut()
         const double scaleFactor = 1.15;
         ui->graphicsView->scale(1.0/scaleFactor, 1.0/scaleFactor);
     }
-
 }
+
+void Interface::RotateImage()
+{
+    QModelIndex index = ui->treeView->currentIndex();
+    QString path = index.data().toString();
+    QPixmap outPixmap = QPixmap();
+    outPixmap.load(path);
+    if (!outPixmap.isNull())
+    {
+        ui->graphicsView->rotate(90);
+    }
+}
+
 
 Interface::~Interface()
 {
