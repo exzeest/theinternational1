@@ -22,14 +22,5 @@ int main(int argc, char *argv[])
     Interface interface(&model);
     interface.show();
 
-     /*QHBoxLayout layout (&interface);
-     QTreeView view;
-     QTableView lview;
-     layout.addWidget(&view);
-     layout.addWidget(&lview);
-         view.setModel(&model);
-         lview.setModel(&model);
-     QObject::connect (&view,SIGNAL(clicked(QModelIndex)),&lview,SLOT(setRootIndex(QModelIndex)));
-     interface.show();*/
     return a.exec();
 }

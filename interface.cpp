@@ -21,25 +21,28 @@ Interface::Interface(tree *model, QWidget *parent) :
 
     QPixmap pix = QPixmap(":/startpic.png");
     QGraphicsScene * scen = new QGraphicsScene();
-    scen->addPixmap(pix.scaled(400,400));
+    scen->addPixmap(pix.scaledToHeight(500));
     ui->graphicsView->setScene(scen);
 
 
 
-    QObject::connect (ui->treeView,SIGNAL(clicked(QModelIndex)),this,SLOT(slotCurrentPic(QModelIndex)));
-    QObject::connect (ui->treeView,SIGNAL(activated(QModelIndex)),this,SLOT(slotCurrentPic(QModelIndex)));
+    QObject::connect (ui->treeView,SIGNAL(clicked(QModelIndex)),this,SLOT(SlotCurrentPic(QModelIndex)));
+    QObject::connect (ui->treeView,SIGNAL(activated(QModelIndex)),this,SLOT(SlotCurrentPic(QModelIndex)));
 
 
-    QObject::connect (ui->treeView,SIGNAL(clicked(QModelIndex)),this,SLOT(setTextLabel(QModelIndex)));
-    QObject::connect (ui->treeView,SIGNAL(activated(QModelIndex)),this,SLOT(setTextLabel(QModelIndex)));
+    QObject::connect (ui->treeView,SIGNAL(clicked(QModelIndex)),this,SLOT(SetTextLabel(QModelIndex)));
+    QObject::connect (ui->treeView,SIGNAL(activated(QModelIndex)),this,SLOT(SetTextLabel(QModelIndex)));
 
 
     // Подрубаем кнопки
-    QObject::connect (ui->tB_right,SIGNAL(clicked()),this,SLOT(nextImage()));
-    QObject::connect (ui->tB_left,SIGNAL(clicked()),this,SLOT(prevImage()));
-
+    QObject::connect (ui->tB_right,SIGNAL(clicked()),this,SLOT(NextImage()));
+    QObject::connect (ui->tB_left,SIGNAL(clicked()),this,SLOT(PrevImage()));
+    QObject::connect (ui->tB_zoom_in, SIGNAL(clicked()),this,SLOT(ZoomIn()));
+    QObject::connect (ui->tB_zoom_out, SIGNAL(clicked()),this,SLOT(ZoomOut()));
+    QObject::connect (ui->pB_zoom_in, SIGNAL(clicked()),this,SLOT(ZoomIn()));
+    QObject::connect (ui->pB_zoom_out, SIGNAL(clicked()),this,SLOT(ZoomOut()));
 }
-void Interface::setTextLabel(QModelIndex index)
+void Interface::SetTextLabel(QModelIndex index)
 {
     if (!index.data().isNull())
     {
@@ -49,7 +52,7 @@ void Interface::setTextLabel(QModelIndex index)
         ui->labelAdress->setText("Current path to image will be shown here");
 }
 
-void Interface::slotCurrentPic(QModelIndex index)
+void Interface::SlotCurrentPic(QModelIndex index)
 {
 
     QString path = index.data().toString();
@@ -57,17 +60,17 @@ void Interface::slotCurrentPic(QModelIndex index)
     outPixmap.load(path);
     if (!outPixmap.isNull())
     {
-        setPicToGView(outPixmap);
+        SetPicToGView(outPixmap);
     }
     else
     {
         QPixmap pix = QPixmap(":/startpic.png");
-        setPicToGView(pix);
+        SetPicToGView(pix);
 
     }
 }
 
-void Interface::setPicToGView(QPixmap outPixmap)
+void Interface::SetPicToGView(QPixmap outPixmap)
 {
     QGraphicsScene * scen = new QGraphicsScene();
     ui->graphicsView->setScene(scen);
@@ -80,7 +83,7 @@ void Interface::setPicToGView(QPixmap outPixmap)
 
 }
 
-void Interface::nextImage()
+void Interface::NextImage()
 {
     QModelIndex nextIndex=ui->treeView->indexBelow(ui->treeView->currentIndex());
     QPixmap outPixmap = QPixmap();
@@ -88,25 +91,51 @@ void Interface::nextImage()
     if (!outPixmap.isNull())
     {
         ui->treeView->selectionModel()->setCurrentIndex(nextIndex, QItemSelectionModel::SelectCurrent );
-        setPicToGView(outPixmap);
-        setTextLabel(nextIndex);
+        SetPicToGView(outPixmap);
+        SetTextLabel(nextIndex);
     }
 }
 
-void Interface::prevImage()
+void Interface::PrevImage()
 {
-    QModelIndex prevIndex=ui->treeView->indexAbove(ui->treeView->currentIndex());
+    QModelIndex prevIndex = ui->treeView->indexAbove(ui->treeView->currentIndex());
 
     QPixmap outPixmap = QPixmap();
     outPixmap.load(prevIndex.data().toString());
     if (!outPixmap.isNull())
     {
         ui->treeView->selectionModel()->setCurrentIndex(prevIndex, QItemSelectionModel::SelectCurrent );
-        setPicToGView(outPixmap);
-        setTextLabel(prevIndex);
+        SetPicToGView(outPixmap);
+        SetTextLabel(prevIndex);
     }
 }
 
+void Interface::ZoomIn()
+{
+    QModelIndex index = ui->treeView->currentIndex();
+    QString path = index.data().toString();
+    QPixmap outPixmap = QPixmap();
+    outPixmap.load(path);
+    if (!outPixmap.isNull())
+    {
+        const double scaleFactor = 1.15;
+        ui->graphicsView->scale(scaleFactor, scaleFactor);
+    }
+
+}
+void Interface::ZoomOut()
+{
+    QModelIndex index = ui->treeView->currentIndex();
+    QString path = index.data().toString();
+    QPixmap outPixmap = QPixmap();
+    outPixmap.load(path);
+    if (!outPixmap.isNull())
+    {
+        const double scaleFactor = 1.15;
+        ui->graphicsView->scale(1.0/scaleFactor, 1.0/scaleFactor);
+    }
+
+}
 
 Interface::~Interface()
 {

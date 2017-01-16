@@ -16,14 +16,14 @@ public:
     explicit Interface( tree *model, QWidget *parent = 0);
     ~Interface();
 private slots:
-    virtual void slotCurrentPic(QModelIndex index);
-    virtual void setTextLabel(QModelIndex index);
-    void nextImage();
-    void prevImage();
-
+    virtual void SlotCurrentPic(QModelIndex index);
+    virtual void SetTextLabel(QModelIndex index);
+    void NextImage();
+    void PrevImage();
+    void ZoomIn();
+    void ZoomOut();
 private:
-    void setPicToGView(QPixmap outPixmap);
-
+    void SetPicToGView(QPixmap outPixmap);
     Ui::Interface *ui;
 };
 
